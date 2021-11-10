@@ -8,11 +8,17 @@ import Home from './Pages/Home/Home/Home';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
 import ExploreProducts from './Pages/Home/ExploreProducts/ExploreProducts';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Purchase from './Pages/Purchase/Purchase/Purchase';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+     <AuthProvider>
+     <Router>
         <Switch>  
         <Route exact path="/navigation">
             <Navigation />
@@ -26,11 +32,21 @@ function App() {
           <Route exact path="/exploreProducts">
             <ExploreProducts />
           </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <PrivateRoute exact path="/purchase/:productId">
+            <Purchase />
+          </PrivateRoute>
           <Route exact path="/footer">
             <Footer />
           </Route>
         </Switch>
     </Router>
+     </AuthProvider>
     </div>
   );
 }

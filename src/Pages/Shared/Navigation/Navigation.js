@@ -6,16 +6,11 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 
 
@@ -62,6 +57,7 @@ const Search = styled('div')(({ theme }) => ({
  
 
 const Navigation = () => {
+    const {user, logOut} = useAuth();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   
@@ -124,26 +120,7 @@ const Navigation = () => {
         open={isMobileMenuOpen}
         onClose={handleMobileMenuClose}
       >
-        <MenuItem>
-          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="error">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-          <IconButton
-            size="large"
-            aria-label="show 17 new notifications"
-            color="inherit"
-          >
-            <Badge badgeContent={17} color="error">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <p>Notifications</p>
-        </MenuItem>
+       
         <MenuItem onClick={handleProfileMenuOpen}>
           <IconButton
             size="large"
@@ -152,7 +129,6 @@ const Navigation = () => {
             aria-haspopup="true"
             color="inherit"
           >
-            <AccountCircle />
           </IconButton>
           <p>Profile</p>
         </MenuItem>
@@ -169,7 +145,6 @@ const Navigation = () => {
               aria-label="open drawer"
               sx={{ mr: 2 }}
             >
-              <MenuIcon />
             </IconButton>
             <Typography
               variant="h6"
@@ -181,7 +156,6 @@ const Navigation = () => {
             </Typography>
             <Search>
               <SearchIconWrapper>
-                <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="Search Your Ring"
@@ -191,10 +165,11 @@ const Navigation = () => {
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
              
-           <Link to="/login"> <Button variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Login</Button>
- </Link>
- <Link to="/login"> <Button variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Logout</Button>
- </Link>
+           { user?.email?
+                <Button onClick={logOut} variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Logout</Button>
+ :
+ <NavLink to="/login"> <Button variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Login</Button>
+ </NavLink>}
             </Box>
            
           </Toolbar>

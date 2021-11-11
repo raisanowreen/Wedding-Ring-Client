@@ -9,7 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -166,7 +166,11 @@ const Navigation = () => {
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
              
            { user?.email?
-                <Button onClick={logOut} variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Logout</Button>
+                <Box>
+                  <Button onClick={logOut} variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Logout</Button>
+                <Link to="/dashboard">Dashboard</Link>
+                </Box>
+              
  :
  <NavLink to="/login"> <Button variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Login</Button>
  </NavLink>}

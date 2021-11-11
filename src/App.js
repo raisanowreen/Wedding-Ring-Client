@@ -15,6 +15,9 @@ import Purchase from './Pages/Purchase/Purchase/Purchase';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AddAProduct from './Pages/Dashboard/AddAProduct/AddAProduct';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import Reviews from './Pages/Home/Reviews/Reviews';
+import AddAReview from './Pages/Dashboard/AddAReview/AddAReview';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
           <Route exact path="/home">
             <Home />
           </Route>
+          <Route exact path="/reviews">
+            <Reviews />
+          </Route>
           <Route exact path="/exploreProducts">
             <ExploreProducts />
           </Route>
@@ -43,9 +49,15 @@ function App() {
           <Route exact path="/addAProduct">
             <AddAProduct />
           </Route>
+          <Route exact path="/addAReview">
+            <AddAReview />
+          </Route>
           <Route exact path="/myOrders">
             <MyOrders />
           </Route>
+          <PrivateRoute exact path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
           <PrivateRoute exact path="/purchase/:productId">
             <Purchase />
           </PrivateRoute>

@@ -13,6 +13,8 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Purchase from './Pages/Purchase/Purchase/Purchase';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import AddAProduct from './Pages/Dashboard/AddAProduct/AddAProduct';
+import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -37,6 +39,12 @@ function App() {
           </Route>
           <Route exact path="/register">
             <Register />
+          </Route>
+          <Route exact path="/addAProduct">
+            <AddAProduct />
+          </Route>
+          <Route exact path="/myOrders">
+            <MyOrders />
           </Route>
           <PrivateRoute exact path="/purchase/:productId">
             <Purchase />

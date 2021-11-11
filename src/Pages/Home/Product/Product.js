@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 
 const Product = (props) => {
-    const {name, price, description, img, code} = props.product;
+    const {name, price, description, img, _id} = props.product;
     return (
         <Grid item xs={4} sm={4} md={4}>
         <Card sx={{ minWidth: 275,border: 0, boxShadow: 0, textAlign: 'center' }}>
@@ -29,7 +29,7 @@ const Product = (props) => {
     <Typography sx={{ mb: 1.5 }} color="text.secondary">
       {price}
     </Typography>
-    <Link to={`/purchase/${code}`}> <Button variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Purchase</Button>
+    <Link to={`/purchase/${_id}`}> <Button variant="outlined" sx={{color: 'text.secondary', fontWeight: 'bold',  fontSize: 'h6.fontSize'}}>Purchase</Button>
  </Link>
   </CardContent>
 </Card>

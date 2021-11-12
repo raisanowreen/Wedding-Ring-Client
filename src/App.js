@@ -53,7 +53,7 @@ function App() {
           <Route exact path="/dashboard/makeAdmin">
             <MakeAdmin />
           </Route>
-          <Route exact path="/addAReview">
+          <Route exact path="/dashboard/addAReview">
             <AddAReview />
           </Route>
           <Route exact path="/myOrders">

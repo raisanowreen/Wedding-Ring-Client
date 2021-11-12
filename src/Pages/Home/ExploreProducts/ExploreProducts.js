@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import Product from '../Product/Product';
 
 
@@ -14,10 +11,6 @@ const ExploreProducts = () => {
         .then(data => setProducts(data))
     },[]);
     return (
-       
-          
-
-
          <div>
       <h1 className="text-success mt-2">Our Rings</h1>
     <div class="row row-cols-1 row-cols-md-4 g-4 m-1">

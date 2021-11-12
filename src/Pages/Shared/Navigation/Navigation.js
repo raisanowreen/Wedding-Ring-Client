@@ -37,7 +37,7 @@ const Navigation = () => {
       { user?.email?
                 <div>
                   
-                  <Link to="/dashboard" style={{ textDecoration: 'none', marginRight: '5px' }}> <button class="btn btn-outline-info text-white">Dashboard</button></Link>
+                  <Link to="/dashboard" style={{ textDecoration: 'none', marginRight:'5px' }}> <button class="btn btn-outline-info text-white">Dashboard</button></Link>
                   <button onClick={logOut} class="btn btn-outline-info text-white">Logout</button>
                 </div>
               

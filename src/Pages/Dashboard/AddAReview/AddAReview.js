@@ -22,13 +22,20 @@ const onSubmit = data => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
 
-<p> <input className="px-5 py-2 rounded" type="text" {...register("name")} placeholder="user name"/>  </p>
-<textarea className="px-5 rounded" {...register("review")} placeholder="Add a review"/>  
-<p>      <input className="px-5 py-2 rounded mb-5 mt-2 bg-warning" type="submit" /></p>
-</form> 
+        <div class="card bg-dark text-white">
+          <img src="https://i.ibb.co/02h7h1D/alekon-pictures-yj4kw-A4h-Ms-unsplash-1.jpg" class="card-img" alt="..."/>
+          <div class="card-img-overlay d-flex justify-content-center align-items-center">
+          <form onSubmit={handleSubmit(onSubmit)}>
+          <h1 className="fs-3 text-white fw-bolder mb-3">Add Your Valuable Comment</h1>
+        <p> <input className="px-5 py-2 rounded" type="text" {...register("name")} placeholder="Customer name"/>  </p>
+        <textarea className="px-5 rounded" {...register("comment")} placeholder="Add a comment"/>  
+        <p>      <button type="submit" class="btn btn-success m-4 text-white">Add a Review</button></p>
+        </form> 
+          </div>
         </div>
+                    
+                </div>
     );
 };
 

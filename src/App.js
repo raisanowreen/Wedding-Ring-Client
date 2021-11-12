@@ -18,6 +18,7 @@ import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import Reviews from './Pages/Home/Reviews/Reviews';
 import AddAReview from './Pages/Dashboard/AddAReview/AddAReview';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -46,8 +47,11 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/addAProduct">
+          <Route exact path="/dashboard/addAProduct">
             <AddAProduct />
+          </Route>
+          <Route exact path="/dashboard/makeAdmin">
+            <MakeAdmin />
           </Route>
           <Route exact path="/addAReview">
             <AddAReview />

@@ -15,13 +15,31 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MyOrders from '../MyOrders/MyOrders';
+import { Button } from '@mui/material';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddAProduct from '../AddAProduct/AddAProduct';
+import useAuth from '../../../hooks/useAuth';
+
+
+import {
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+  } from "react-router-dom";
+
+
 
 const drawerWidth = 240;
 
 const Dashboard = (props) => {
     const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const {admin} = useAuth();
+
+
+  let { path, url } = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -31,6 +49,15 @@ const Dashboard = (props) => {
     <div>
       <Toolbar />
       <Divider />
+      <Link to="/explore"><Button>Explore</Button></Link>
+      <Link to={`${url}`}><Button>Dashboard</Button></Link>
+      { admin &&
+        <Box>
+          <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link>
+      <Link to={`${url}/addAProduct`}><Button>Add A Product</Button></Link>
+        </Box>
+      }
+      <Link to={`${url}/addAReview`}><Button>Add A Review</Button></Link>
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
@@ -120,7 +147,17 @@ const Dashboard = (props) => {
       >
         <Toolbar />
         
-        <MyOrders></MyOrders>
+        <Switch>
+        <Route exact path={path}>
+<DashboardHome></DashboardHome>        
+</Route>
+        <Route exact path={`${path}/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+        </Route>
+        <Route exact path={`${path}/addAProduct`}>
+            <AddAProduct></AddAProduct>
+        </Route>
+      </Switch>
       </Box>
     </Box>
   );

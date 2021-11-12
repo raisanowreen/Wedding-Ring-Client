@@ -22,14 +22,21 @@ const onSubmit = data => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
 
-<p> <input className="px-5 py-2 rounded" type="text" {...register("name")} placeholder="food name"/>  </p>
-<textarea className="px-5 rounded" {...register("details")} placeholder="food details"/>
-<p>      <input className="px-5 py-2 rounded" type="number" {...register("price")} placeholder="food price"/></p>   
-<input className="px-5 py-2 rounded" type="text" {...register("img")} placeholder="food image url" />    
-<p>      <input className="px-5 py-2 rounded mb-5 mt-2 bg-warning" type="submit" /></p>
+<div class="card bg-dark text-white">
+  <img src="https://i.ibb.co/02h7h1D/alekon-pictures-yj4kw-A4h-Ms-unsplash-1.jpg" class="card-img" alt="..."/>
+  <div class="card-img-overlay d-flex justify-content-center align-items-center">
+  <form onSubmit={handleSubmit(onSubmit)}>
+  <h1 className="fs-3 text-white fw-bolder mb-3">Add a New Product</h1>
+<p> <input className="px-4 bg-info py-2 rounded" type="text" {...register("name")} placeholder="Ring name"/>  </p>
+<textarea className="px-5 rounded bg-info" {...register("details")} placeholder="Ring details"/>
+<p>      <input className="px-5 py-2 bg-info rounded" type="number" {...register("price")} placeholder="Ring price"/></p>   
+<input className="px-5 py-2 bg-info rounded" type="text" {...register("img")} placeholder="Ring image url" />    
+<p>      <button type="submit" class="btn btn-success m-4 text-white">Add New Ring</button></p>
 </form> 
+  </div>
+</div>
+            
         </div>
     );
 };

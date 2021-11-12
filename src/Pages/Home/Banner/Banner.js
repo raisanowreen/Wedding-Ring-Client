@@ -6,7 +6,7 @@ const Banner = () => {
         <div>
 
 <div class="card bg-dark text-white">
-  <img src="https://i.ibb.co/Y3WxjZ1/tyler-nix-fo83-GD-AARE-unsplash.jpg" height="700px" class="card-img img-fluid" alt="..."/>
+  <img src="https://i.ibb.co/Y3WxjZ1/tyler-nix-fo83-GD-AARE-unsplash.jpg" height="30%" width="30%" class="card-img img-fluid" alt="..."/>
   <div class="card-img-overlay d-flex justify-content-center align-items-center">
    <div> 
    <h5 class="card-title fs-1 fw-bold text-white mb-5">Choose Your Dream Ring</h5>

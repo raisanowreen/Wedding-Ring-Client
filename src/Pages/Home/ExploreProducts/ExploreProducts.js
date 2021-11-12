@@ -9,24 +9,29 @@ import Product from '../Product/Product';
 const ExploreProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() =>{
-        fetch('./products.json')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
     return (
-        <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="h6" component="div" sx={{mb:2, color: 'info.main'}}>
-         Our Products
-         </Typography>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-           {
- products.map(product => <Product
- key= {product.name}
- product = {product}
- ></Product>)
-           }
-         </Grid>
-       </Box>
+       
+          
+
+
+         <div>
+      <h1 className="text-success mt-2">Our Rings</h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4 m-1">
+
+{
+products.map(product => <Product
+key= {product.name}
+product = {product}
+></Product>)
+}
+
+</div>
+    </div>
+      
     );
 };
 

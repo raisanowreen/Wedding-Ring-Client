@@ -6,12 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -49,36 +43,20 @@ const Dashboard = (props) => {
     <div>
       <Toolbar />
       <Divider />
-      <Link to="/explore"><Button>Explore</Button></Link>
-      <Link to={`${url}`}><Button>Dashboard</Button></Link>
+      
       { admin &&
         <Box>
-          <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link>
-      <Link to={`${url}/addAProduct`}><Button>Add A Product</Button></Link>
+          <Link to={`${url}/makeAdmin`}><Button class="btn btn-success m-4 text-white">Make Admin</Button></Link>
+      <Link to={`${url}/addAProduct`}><Button class="btn btn-success m-4 text-white">Add A Product</Button></Link>
         </Box>
       }
-      <Link to={`${url}/addAReview`}><Button>Add A Review</Button></Link>
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Box>
+      <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white">Pay</Button></Link>
+      <Link to={`${url}/addAReview`}><Button class="btn btn-success m-4 text-white">Add A Review</Button></Link>
+      <Link to={`${url}/logout`}><Button class="btn btn-success m-4 text-white">Logout</Button></Link>
+      <Link to="/explore"><Button class="btn btn-success m-4 text-white">Explore</Button></Link>
+      <Link to={`${url}`}><Button class="btn btn-success m-4 text-white">My Orders</Button></Link>
+      </Box>
     </div>
   );
 
@@ -105,8 +83,7 @@ const Dashboard = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
+Dashboard          </Typography>
         </Toolbar>
       </AppBar>
       <Box

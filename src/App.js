@@ -20,6 +20,7 @@ import AddAReview from './Pages/Dashboard/AddAReview/AddAReview';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import Pay from './Pages/Dashboard/Pay/Pay';
+import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route exact path="/dashboard/addAProduct">
             <AddAProduct />
+          </Route>
+          <Route exact path="/dashboard/manageProducts">
+            <ManageProducts />
           </Route>
           <Route exact path="/dashboard/makeAdmin">
             <MakeAdmin />

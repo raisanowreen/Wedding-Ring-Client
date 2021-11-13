@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div class="card text-white">
+        <div class="card text-white w-100">
   <img src="https://img.freepik.com/free-vector/green-curve-abstract-background_53876-99569.jpg?size=626&ext=jpg" class="card-img" alt="..." height="300px"/>
   <div class="card-img-overlay">
   <div>

@@ -19,7 +19,7 @@ const MyOrders = () => {
             {orders.map(order =>  <table class="table table-dark table-striped">
             <thead>
     <tr>
-      <th scope="col">Order no.</th>
+      <th scope="col">Order Id</th>
       <th scope="col">Ring</th>
       <th scope="col">Price</th>
       <th scope="col">Shipment</th>
@@ -32,7 +32,7 @@ const MyOrders = () => {
       <td>{order.ring}</td>
       <td>$ {order.price}</td>
       <td>{order.status}</td> 
-      <td><button class="btn btn-outline-darger text-white">Delete</button></td> 
+      <td><button class="btn btn-outline-danger text-white">Delete</button></td> 
     </tr>
   </tbody>
 </table>)}

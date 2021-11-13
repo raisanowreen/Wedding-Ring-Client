@@ -25,64 +25,72 @@ console.log(field, value);
 
     const handleLoginSubmit = e =>{
         if(loginData.password == loginData.password2){
-            alert("Hello")
+            alert("Registered Successfully")
             e.preventDefault();
         }
         registerUser(loginData.email, loginData.password,loginData.name, history);
        
     }
     return (
-        <Grid container spacing={2}>
-    <Grid item xs={12} md={8}>
+     <div>
        
-    </Grid>
-    <Grid item xs={12} md={4}>
-        <form onSubmit={handleLoginSubmit}>
-        <Typography>Login</Typography>
-        <TextField
-      id="filled-search"
-      label="Your Name"
-      name="name"
-      onBlur={handleOnBlur}
-      type="text"
-      variant="filled"
-    />
-    <br />
-        <TextField
-      id="filled-search"
-      label="Your Email"
-      name="email"
-      onBlur={handleOnBlur}
-      type="text"
-      variant="filled"
-    />
-    <br />
-     <TextField
-      id="filled-password-input"
-      label="Password"
-      name="password"
-      onChange={handleOnBlur}
-      type="password"
-      autoComplete="current-password"
-      variant="filled"
-    />
-    <br />
-     <TextField
-      id="filled-password-input"
-      label="Password2"
-      name="password2"
-      onChange={handleOnBlur}
-      type="password"
-      autoComplete="current-password"
-      variant="filled"
-    />
-    <br />
-    <Button type="submit">Register</Button>
-    <br />
-    <Link to="/login">Already Registered?</Link>
-        </form>
-    </Grid>
-  </Grid>
+      <div>
+      <div class="card bg-dark text-white">
+          <img src="https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img" alt="..."/>
+          <div class="card-img-overlay d-flex justify-content-center align-items-center">
+          <form onSubmit={handleLoginSubmit} className="bg-info p-4">
+          <h3 className="text-success mb-3">Register Please</h3>            
+          <TextField
+    id="filled-search"
+    label="Your Name"
+    name="name"
+    onBlur={handleOnBlur}
+    type="text"
+    variant="filled"
+  />
+  <br />
+      <TextField
+    id="filled-search"
+    label="Your Email"
+    name="email"
+    onBlur={handleOnBlur}
+    type="text"
+    variant="filled"
+  />
+  <br />
+   <TextField
+    id="filled-password-input"
+    label="Password"
+    name="password"
+    onChange={handleOnBlur}
+    type="password"
+    autoComplete="current-password"
+    variant="filled"
+  />
+  <br />
+   <TextField
+    id="filled-password-input"
+    label="Confirm Password"
+    name="password2"
+    onChange={handleOnBlur}
+    type="password"
+    autoComplete="current-password"
+    variant="filled"
+  />
+  <br />
+  <button type="submit" class="btn btn-success m-4 text-white px-5">Register</button>   <br />
+  <Link to="/login"><h5 className="text-dark">Already registered?</h5></Link>
+
+
+ 
+
+
+
+      </form>
+          </div>
+        </div>
+           </div>
+     </div>
     );
 };
 

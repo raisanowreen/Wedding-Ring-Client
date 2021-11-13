@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { Link, useHistory,
     useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -24,20 +21,18 @@ console.log(field, value);
 
 
     const handleLoginSubmit = e =>{
-        alert("Hello")
+        alert("Logged in Successfully")
         e.preventDefault();
         loginUser(loginData.email, loginData.password, location, history);
     }
   
     return (
-            <Grid container spacing={2}>
-        <Grid item xs={12} md={8}>
-           
-        </Grid>
-        <Grid item xs={12} md={4}>
-            <form onSubmit={handleLoginSubmit}>
-            <Typography>Login</Typography>
-            <TextField
+           <div>
+      <div class="card bg-dark text-white">
+          <img src="https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img" alt="..."/>
+          <div class="card-img-overlay d-flex justify-content-center align-items-center">
+          <form onSubmit={handleLoginSubmit} className="bg-info p-5">
+<h3 className="text-success mb-3">Login Please</h3>            <TextField
           id="filled-search"
           label="Your Email"
           name="email"
@@ -56,12 +51,12 @@ console.log(field, value);
           variant="filled"
         />
         <br />
-        <Button type="submit">Login</Button>
-        <br />
-        <Link to="/register">Haven't registered yet?</Link>
+        <button type="submit" class="btn btn-success m-4 text-white px-5">Login</button>        <br />
+        <Link to="/register"><h5 className="text-dark">Haven't registered yet?</h5></Link>
             </form>
-        </Grid>
-      </Grid>
+          </div>
+        </div>
+           </div>
     );
 };
 

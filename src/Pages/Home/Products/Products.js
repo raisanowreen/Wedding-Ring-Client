@@ -9,9 +9,9 @@ const Products = () => {
         .then(data => setProducts(data))
     },[]);
     return (
-      <div>
+      <div className="w-100">
       <h3 className="text-success mt-5">Our Latest Rings</h3>
-    <div class="row row-cols-1 row-cols-md-6 g-4 mb-5">
+    <div class="row row-cols-1 row-cols-md-6 g-4 mb-5 w-100">
 
 {
 products.slice(0,6).map(product => <Product

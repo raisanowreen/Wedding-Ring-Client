@@ -36,18 +36,19 @@ const Dashboard = (props) => {
   };
 
   const drawer = (
-    <div className="bg-dark">
-      <h3 className="text-info mt-3">Welcome to Dashboard</h3>      
+    <div className="bg-dark h-100">
+      <h3 className="text-info mt-3">Welcome to Dashboard</h3> 
+      <Link to="/home"><Button class="btn btn-success m-4 text-white w-75">Home</Button></Link>     
       { admin &&
         <Box>
           <Link to={`${url}/makeAdmin`}><Button class="btn btn-success m-4 text-white w-75">Make Admin</Button></Link>
       <Link to={`${url}/addAProduct`}><Button class="btn btn-success m-4 text-white w-75">Add A Product</Button></Link>
+      <Link to={`${url}/manageProducts`}><Button class="btn btn-success m-4 text-white w-75">Manage Products</Button></Link>
         </Box>
       }
       <Box>
       <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white w-75">Payment</Button></Link>
       <Link to={`${url}/addAReview`}><Button class="btn btn-success m-4 text-white w-75">Add A Review</Button></Link>
-      <Link to="/home"><Button class="btn btn-success m-4 text-white w-75">Home</Button></Link>
       <Link to={`${url}`}><Button class="btn btn-success m-4 text-white w-75">My Orders</Button></Link>
       <Link to={`${url}/logout`}><Button onClick={logOut} class="btn btn-success m-4 text-white w-75">Logout</Button></Link>
       

@@ -3,12 +3,8 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -30,7 +26,7 @@ const drawerWidth = 240;
 const Dashboard = (props) => {
     const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {admin} = useAuth();
+  const {admin, logOut} = useAuth();
 
 
   let { path, url } = useRouteMatch();
@@ -40,22 +36,21 @@ const Dashboard = (props) => {
   };
 
   const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      
+    <div className="bg-dark">
+      <h3 className="text-info mt-3">Welcome to Dashboard</h3>      
       { admin &&
         <Box>
-          <Link to={`${url}/makeAdmin`}><Button class="btn btn-success m-4 text-white">Make Admin</Button></Link>
-      <Link to={`${url}/addAProduct`}><Button class="btn btn-success m-4 text-white">Add A Product</Button></Link>
+          <Link to={`${url}/makeAdmin`}><Button class="btn btn-success m-4 text-white w-75">Make Admin</Button></Link>
+      <Link to={`${url}/addAProduct`}><Button class="btn btn-success m-4 text-white w-75">Add A Product</Button></Link>
         </Box>
       }
       <Box>
-      <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white">Pay</Button></Link>
-      <Link to={`${url}/addAReview`}><Button class="btn btn-success m-4 text-white">Add A Review</Button></Link>
-      <Link to={`${url}/logout`}><Button class="btn btn-success m-4 text-white">Logout</Button></Link>
-      <Link to="/explore"><Button class="btn btn-success m-4 text-white">Explore</Button></Link>
-      <Link to={`${url}`}><Button class="btn btn-success m-4 text-white">My Orders</Button></Link>
+      <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white w-75">Payment</Button></Link>
+      <Link to={`${url}/addAReview`}><Button class="btn btn-success m-4 text-white w-75">Add A Review</Button></Link>
+      <Link to="/home"><Button class="btn btn-success m-4 text-white w-75">Home</Button></Link>
+      <Link to={`${url}`}><Button class="btn btn-success m-4 text-white w-75">My Orders</Button></Link>
+      <Link to={`${url}/logout`}><Button onClick={logOut} class="btn btn-success m-4 text-white w-75">Logout</Button></Link>
+      
       </Box>
     </div>
   );
@@ -63,7 +58,8 @@ const Dashboard = (props) => {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', bgcolor: 'text.primary' }}>
+       
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -72,23 +68,10 @@ const Dashboard = (props) => {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-Dashboard          </Typography>
-        </Toolbar>
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, bgcolor: 'text.primary' }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -101,7 +84,7 @@ Dashboard          </Typography>
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', sm: 'none' }, bgcolor: 'text.primary',
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
@@ -110,7 +93,7 @@ Dashboard          </Typography>
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', sm: 'block' }, bgcolor: 'text.primary',
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
           open
@@ -120,10 +103,10 @@ Dashboard          </Typography>
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` },bgcolor: 'text.primary' }}
       >
         <Toolbar />
-        
+        <h3 className="text-info mb-5">Check Your Orders</h3>
         <Switch>
         <Route exact path={path}>
 <DashboardHome></DashboardHome>        

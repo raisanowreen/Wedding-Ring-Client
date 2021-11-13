@@ -19,6 +19,7 @@ import Reviews from './Pages/Home/Reviews/Reviews';
 import AddAReview from './Pages/Dashboard/AddAReview/AddAReview';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import Pay from './Pages/Dashboard/Pay/Pay';
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
           </Route>
           <Route exact path="/dashboard/addAReview">
             <AddAReview />
+          </Route>
+          <Route exact path="/dashboard/pay">
+            <Pay />
           </Route>
           <Route exact path="/myOrders">
             <MyOrders />

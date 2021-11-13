@@ -48,24 +48,38 @@ const onSubmit = data => {
 
 
     return (
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={6}>
-<Typography>{product.name}</Typography>        
-</Grid>
-        <Grid item xs={6}>
-        <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="bg-dark">
+                    <h1 className="fs-3 text-success fw-bolder mb-3 pt-5">Fill Up The Form To Purchase</h1>
 
-<p><input className="p-2 rounded me-3 mb-2" defaultValue={user.displayName} {...register("name")} />
-<input className="p-2 rounded" defaultValue={user.email} {...register("email", { required: true })} /></p>
-<p><input className="px-2 py-2 rounded text-center" defaultValue="" placeholder="food type" {...register("food", { required: true })} /></p>
-<input className="p-2 rounded me-3 mb-3" placeholder="Address" defaultValue="" {...register("address")} />
-<input className="p-2 rounded mb-2" placeholder="City" defaultValue="" {...register("city")} />
-<input className="p-2 rounded me-3 mb-2" placeholder="phone number" defaultValue="" type="number" {...register("phone")} />
-<input className="p-2 rounded" defaultValue="Pending" {...register("status")} />
-<p><input className="mt-3 p-2 rounded bg-warning" type="submit" value="Purchase Food Option" /></p>
-</form>
-        </Grid>
-      </Grid>
+            <div class="row row-cols-1 row-cols-md-2 g-4 w-75 mx-auto">
+        
+        <div class="col mt-5 pt-5">
+          <div class="card">
+          <form className="shipping-form bg-success p-3" onSubmit={handleSubmit(onSubmit)}>
+      
+      <p><input className="p-2 rounded me-3 mb-2 w-50" defaultValue={user.displayName} {...register("name")} />
+      <input className="p-2 rounded" defaultValue={user.email} {...register("email", { required: true })} /></p>
+      <p><input className="px-2 py-2 rounded text-center" defaultValue="" placeholder="Ring name" {...register("ring", { required: true })} /></p>
+      <input className="p-2 rounded me-3 mb-3" placeholder="Address" defaultValue="" {...register("address")} />
+      <input className="p-2 rounded mb-2 me-3" placeholder="City" defaultValue="" {...register("city")} />
+      <input className="p-2 rounded me-3 mb-2" placeholder="Phone number" defaultValue="" type="number" {...register("phone")} />
+      <input className="p-2 rounded" defaultValue="Pending" {...register("status")} />
+      <p><button type="submit" class="btn btn-outline-info m-4 text-white">Purchase Now</button></p>
+      </form>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div class="card h-100 bg-success">
+            <img src={product.img} class="card-img-top pt-5 ps-5 pe-5 pb-2" alt="..."/>
+            <div class="card-body">
+              <h5 class="card-title text-white">{product.name}</h5>
+              <p class="text-info">Price: $ {product.price}</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
     );
 };
 

@@ -15,8 +15,30 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h1>{orders.length}</h1>
-            {orders.map(order => <h1>{order.name}</h1>)}
+            <h4 className="bg-success p-3">{orders.length} orders has been placed</h4>
+            {orders.map(order =>  <table class="table table-dark table-striped">
+            <thead>
+    <tr>
+      <th scope="col">Order no.</th>
+      <th scope="col">Ring</th>
+      <th scope="col">Price</th>
+      <th scope="col">Shipment</th>
+      <th scope="col">Control</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{order._id}</th>
+      <td>{order.ring}</td>
+      <td>$ {order.price}</td>
+      <td>{order.status}</td> 
+      <td><button class="btn btn-outline-darger text-white">Delete</button></td> 
+    </tr>
+  </tbody>
+</table>)}
+
+
+           
         </div>
     );
 };

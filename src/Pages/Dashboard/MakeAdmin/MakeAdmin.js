@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
 
 
 const MakeAdmin = () => {
@@ -27,16 +26,15 @@ fetch('http://localhost:5000/users/admin', {
     }
     return (
         <div>
-            <h1>Make an admin</h1>
-           <form onSubmit={handleAdminSubmit}>
+            <h1 className="text-success mt-5">Make an Admin</h1>
+           <form onSubmit={handleAdminSubmit} className="bg-dark p-5 w-50 mx-auto pt-5 mt-5 rounded">
            <TextField
-          
+          sx={{ bgcolor: 'warning.main'}}
           onBlur={handleOnBlur}
           type="email"           
           label="Email"
-          defaultValue="Hello World"
         /> 
-        <Button type="submit">Make Admin</Button>
+       <button type="submit" class="btn btn-outline-info ms-3 mt-2 text-white">Make an Admin</button>
            </form>
         </div>
     );

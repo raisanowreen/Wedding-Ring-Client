@@ -10,8 +10,8 @@ const Products = () => {
     },[]);
     return (
       <div>
-      <h1 className="text-success mt-2">Our Rings</h1>
-    <div class="row row-cols-1 row-cols-md-6 g-4 m-1">
+      <h3 className="text-success mt-5">Our Latest Rings</h3>
+    <div class="row row-cols-1 row-cols-md-6 g-4 mb-5">
 
 {
 products.slice(0,6).map(product => <Product

@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
 import { useParams } from 'react-router';
-import { Typography, Button } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
@@ -12,17 +9,7 @@ const Purchase = () => {
     const {user} = useAuth();
     const {productId} = useParams();
     const [product, setProduct] = useState({ });
-    const initialInfo = {userName:user.displayName, email: user.email, phone:'' }
-const [orderInfo, setOrderInfo] = useState(initialInfo);
 
-const handleOnBlur = e =>{
-    const field = e.target.name;
-    const value = e.target.value;
-    const newInfo = {...orderInfo};
-    newInfo[field] = value;
-    console.log(newInfo);
-   setOrderInfo(newInfo);
-}
 
 // Single item url fetch
 useEffect( () =>{

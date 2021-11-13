@@ -11,7 +11,7 @@ const AddAReview = () => {
 const onSubmit = data => {
     console.log(data);
 
-    // Add items api to database
+    // Add reviews api to database
 
     axios.post('https://boiling-everglades-45743.herokuapp.com/reviews', data)
     .then(res =>{

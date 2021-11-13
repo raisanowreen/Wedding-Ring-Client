@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
 
-
+// add a new admin by existing admin
     const handleOnBlur = e =>{
        setEmail(e.target.value);
     }

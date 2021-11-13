@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import Grid from '@mui/material/Grid';
-
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';import TextField from '@mui/material/TextField';
+import TextField from '@mui/material/TextField';
 import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
@@ -11,7 +8,7 @@ import Footer from '../../Shared/Footer/Footer';
 
 
 const Register = () => {
-    const {registerUser, user, authError} = useAuth();
+    const {registerUser} = useAuth();
     const [loginData, setLoginData] = useState({})
     const history = useHistory();
 
@@ -83,12 +80,6 @@ console.log(field, value);
   <br />
   <button type="submit" class="btn btn-success m-4 text-white px-5">Register</button>   <br />
   <Link to="/login"><h5 className="text-dark">Already registered?</h5></Link>
-
-
- 
-
-
-
       </form>
           </div>
         </div>

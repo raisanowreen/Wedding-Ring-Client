@@ -3,6 +3,8 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const [products, setProducts] = useState([])
+
+    // showing six products from database
     useEffect(() =>{
         fetch('https://boiling-everglades-45743.herokuapp.com/products')
         .then(res => res.json())

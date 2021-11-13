@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
+
+    // show all products
     useEffect(() =>{
         fetch('https://boiling-everglades-45743.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
 
-
+// delete any product
     const handleDelete = id =>{
         const url= `https://boiling-everglades-45743.herokuapp.com/products/${id}`
         fetch(url, {

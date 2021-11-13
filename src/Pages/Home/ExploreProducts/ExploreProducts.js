@@ -5,6 +5,8 @@ import Product from '../Product/Product';
 
 const ExploreProducts = () => {
     const [products, setProducts] = useState([])
+
+    // fetching all data from database
     useEffect(() =>{
         fetch('https://boiling-everglades-45743.herokuapp.com/products')
         .then(res => res.json())

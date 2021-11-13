@@ -3,8 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
-
-
 const Navigation = () => {
     const {user, logOut} = useAuth();
 
@@ -34,9 +32,7 @@ const Navigation = () => {
                   
                   <Link to="/dashboard" style={{ textDecoration: 'none', marginRight:'5px' }}> <button class="btn btn-outline-info text-white">Dashboard</button></Link>
                   <button onClick={logOut} class="btn btn-outline-info text-white">Logout Now</button>
-                </div>
-              
-              
+                </div>           
  :
  <NavLink to="/login" style={{ textDecoration: 'none' }}> <button class="btn btn-outline-info text-white">Login</button>
  </NavLink>}

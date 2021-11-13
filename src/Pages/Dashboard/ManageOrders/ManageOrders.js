@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 const ManageOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
 
+
+// show all orders
+
     useEffect(()=>{
         const url = 'https://boiling-everglades-45743.herokuapp.com/allOrders';
         fetch(url)
@@ -11,7 +14,7 @@ const ManageOrders = () => {
         );
     },[]); 
 
-
+// delete any order
     const handleDelete = id =>{
         const url= `https://boiling-everglades-45743.herokuapp.com/allOrders/${id}`
         fetch(url, {
@@ -28,7 +31,7 @@ const ManageOrders = () => {
         })
     }
 
-
+// update order status
     const [status, setStatus] = useState('')
 
     const handleStatus = (e) =>{

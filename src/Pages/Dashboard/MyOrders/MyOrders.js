@@ -5,6 +5,8 @@ const MyOrders = () => {
     const {user} = useAuth();
     const [orders, setOrders] = useState([]);
 
+
+    // Showing users their orders
     useEffect(()=>{
         const url = `https://boiling-everglades-45743.herokuapp.com/orders?email=${user.email}`
         fetch(url)
@@ -13,7 +15,7 @@ const MyOrders = () => {
         );
     },[user]); 
 
-
+// Deleting any orders by users
     const handleDelete = id =>{
       const url= `https://boiling-everglades-45743.herokuapp.com/allOrders/${id}`
       fetch(url, {

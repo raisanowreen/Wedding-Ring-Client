@@ -19,8 +19,6 @@ import {
     useRouteMatch
   } from "react-router-dom";
 
-
-
 const drawerWidth = 240;
 
 const Dashboard = (props) => {

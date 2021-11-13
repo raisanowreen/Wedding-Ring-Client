@@ -1,11 +1,11 @@
 # Wedding Ring
 
-This project was bootstrapped with [Create React App](https://food-wala-f610e.web.app/).
-You can also find the live site here(https://food-wala-f610e.web.app/)
+This project was bootstrapped with [Create React App](wedding-ring-4a3b3.web.app).
+You can also find the live site here(wedding-ring-4a3b3.web.app)
 
 ## Project Introduction
 
-This project is created on one product sale theme. Wedding ring is for people who is finding thew best ring. After registering, anyone can purchase any type ring from this website.
+This project is created on one type product sale theme. Wedding ring is for people who is finding the best ring. After registering, anyone can purchase any type ring from this website.
 
 ### Project Features
 
@@ -13,14 +13,14 @@ There are many features have been applied in this project.
 
 + Frameworks & Dashboard
 
-Bootstrap css framework has been used in this project for styling UI. Also react bootstrap has been used to create all orders table in Managae All Orders route. Admin and users have different access to different routes in the dashboard
+Bootstrap css and material ui framework have been used in this project for styling UI. Admin and users have different access to different routes in the dashboard
 
 + Installation
 act route, firebase, Mongodb, Express, Dotenv, Cors, Node has been installed to make the site like Single Page Application, implement login methods, connect to database, have uninterapted functionalities.
 
 + Private Route & Security
 
-One of the main features here is the private route implementation. The private route redirects users to login page. Also dotenv has been used to secure database user information.
+One of the main features here is the private route implementation and admin dashboard. The private route redirects users to login page. Also dotenv has been used to secure database user information. Admin can make new admins and also can add products, delete orders, update orders and manage orders.
 
 + Database Connection
 

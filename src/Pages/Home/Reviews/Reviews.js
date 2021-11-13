@@ -3,6 +3,7 @@ import Rating from 'react-rating';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
+    // fetching reviews data from database
     useEffect(() =>{
         fetch('https://boiling-everglades-45743.herokuapp.com/reviews')
         .then(res => res.json())

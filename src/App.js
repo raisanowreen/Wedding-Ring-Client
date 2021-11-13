@@ -29,14 +29,14 @@ function App() {
      <AuthProvider>
      <Router>
         <Switch>  
-        <Route exact path="/navigation">
-            <Navigation />
-          </Route>
-          <Route exact path="/">
+        <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/home">
             <Home />
+          </Route>
+        <Route exact path="/navigation">
+            <Navigation />
           </Route>
           <Route exact path="/reviews">
             <Reviews />

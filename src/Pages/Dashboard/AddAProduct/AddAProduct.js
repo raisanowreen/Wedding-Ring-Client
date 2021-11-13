@@ -11,7 +11,7 @@ const AddAProduct = () => {
 const onSubmit = data => {
     console.log(data);
 
-    // Add items api to database
+    // Add products api to database
 
     axios.post('https://boiling-everglades-45743.herokuapp.com/products', data)
     .then(res =>{
@@ -21,7 +21,6 @@ const onSubmit = data => {
         }
     })
 }
-
     return (
         <div>
             <Navigation></Navigation>

@@ -23,13 +23,16 @@ const Navigation = () => {
           <a class="nav-link active text-white" aria-current="page" href="#blogs">Blogs</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="/exploreProducts">Explore</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="#contact">Contact</a>
         </li>
        
       </ul>
       { user?.email?
                 <div>
-                  
+                  <h1>Hi {user.displayName}!</h1>
                   <Link to="/dashboard" style={{ textDecoration: 'none', marginRight:'5px' }}> <button class="btn btn-outline-info text-white">Dashboard</button></Link>
                   <button onClick={logOut} class="btn btn-outline-info text-white">Logout Now</button>
                 </div>           

@@ -20,7 +20,7 @@ const ManageProducts = () => {
         .then(data =>{
             console.log(data);
             if(data.deletedCount){
-                alert('Deleted');
+                alert('You sure to delete it?');
                 const remaining = products.filter(product => product._id !== id);
                 setProducts(remaining)
             }

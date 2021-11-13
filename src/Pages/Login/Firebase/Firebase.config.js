@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCh5siLQGaGsTU_7g9nZNSwloKo2wkRfig",
-    authDomain: "wedding-ring-4a3b3.firebaseapp.com",
-    projectId: "wedding-ring-4a3b3",
-    storageBucket: "wedding-ring-4a3b3.appspot.com",
-    messagingSenderId: "181666205742",
-    appId: "1:181666205742:web:f0fe85f98577002f83cfbf"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_MESSAGING_APP_ID,
   };
 
   export default firebaseConfig;

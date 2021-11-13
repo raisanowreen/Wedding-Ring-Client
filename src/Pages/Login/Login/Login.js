@@ -3,7 +3,6 @@ import TextField from '@mui/material/TextField';
 import { Link, useHistory,
     useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
@@ -30,7 +29,7 @@ console.log(field, value);
   
     return (
            <div>
-             <Navigation></Navigation>
+             <br />
              <br />
       <div class="card bg-dark text-white mt-5 pt-5">
           <img src="https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img" alt="..."/>

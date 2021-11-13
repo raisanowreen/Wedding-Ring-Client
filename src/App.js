@@ -50,28 +50,28 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/dashboard/addAProduct">
+          <Route exact path="/addAProduct">
             <AddAProduct />
           </Route>
-          <Route exact path="/dashboard/manageProducts">
+          <Route exact path="/manageProducts">
             <ManageProducts />
           </Route>
-          <Route exact path="/dashboard/manageOrders">
+          <Route exact path="/manageOrders">
             <ManageOrders />
           </Route>
-          <Route exact path="/dashboard/makeAdmin">
+          <Route exact path="/makeAdmin">
             <MakeAdmin />
           </Route>
-          <Route exact path="/dashboard/addAReview">
+          <Route exact path="/addAReview">
             <AddAReview />
           </Route>
-          <Route exact path="/dashboard/pay">
+          <Route exact path="/pay">
             <Pay />
           </Route>
           <Route exact path="/myOrders">
             <MyOrders />
           </Route>
-          <PrivateRoute exact path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>
           <PrivateRoute exact path="/purchase/:productId">

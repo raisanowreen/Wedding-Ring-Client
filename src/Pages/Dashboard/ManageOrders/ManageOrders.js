@@ -75,7 +75,7 @@ fetch(`https://boiling-everglades-45743.herokuapp.com/allOrders/${id}`,{
   <td>{allOrders.ring}</td>
   <td>$ {allOrders.price}</td>
   <td><input onChange={handleStatus} type="text" defaultValue={allOrders.status} /></td> 
-  <td><button class="btn btn-outline-danger text-dark" onClick={()=> handleUpdate(allOrders._id)}>Update</button></td> 
+  <td><button class="btn btn-info text-dark" onClick={()=> handleUpdate(allOrders._id)}>Update</button></td> 
   <td><button class="btn btn-outline-danger text-dark" onClick={()=> handleDelete(allOrders._id)}>Delete</button></td> 
 </tr>
 </tbody>

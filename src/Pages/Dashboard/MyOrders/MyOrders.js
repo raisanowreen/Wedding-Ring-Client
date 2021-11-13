@@ -51,7 +51,7 @@ const MyOrders = () => {
       <td>{order.ring}</td>
       <td>$ {order.price}</td>
       <td>{order.status}</td> 
-      <td><button class="btn btn-outline-danger text-white" onClick={()=> handleDelete(order._id)}>Delete</button></td> 
+      <td><button class="btn btn-danger text-white" onClick={()=> handleDelete(order._id)}>Delete</button></td> 
     </tr>
   </tbody>
 </table></div>)}

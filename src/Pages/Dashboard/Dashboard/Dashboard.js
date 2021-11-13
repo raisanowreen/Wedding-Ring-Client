@@ -46,13 +46,12 @@ const Dashboard = (props) => {
       <Link to={`${url}/manageProducts`}><Button class="btn btn-success m-4 text-white w-75">Manage Products</Button></Link>
         </Box>
       }
-      <Box>
-      <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white w-75">Payment</Button></Link>
+    <div className="bg-dark">
+    <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white w-75">Payment</Button></Link>
       <Link to={`${url}/addAReview`}><Button class="btn btn-success m-4 text-white w-75">Add A Review</Button></Link>
       <Link to={`${url}`}><Button class="btn btn-success m-4 text-white w-75">My Orders</Button></Link>
       <Link to={`${url}/logout`}><Button onClick={logOut} class="btn btn-success m-4 text-white w-75">Logout</Button></Link>
-      
-      </Box>
+    </div>
     </div>
   );
 

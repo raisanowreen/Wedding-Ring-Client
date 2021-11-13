@@ -43,7 +43,7 @@ const Navigation = () => {
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light mb-5">
   <div class="container-fluid">
   <button class="btn btn-success text-white mb-3">Buy Now</button>
     <form class="d-flex">

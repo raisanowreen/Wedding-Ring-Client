@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 
 const AddAProduct = () => {
@@ -22,7 +24,12 @@ const onSubmit = data => {
 
     return (
         <div>
-
+            <Navigation></Navigation>
+<br />
+<br />
+<br />
+<br />
+<br />
 <div class="card bg-dark text-white">
   <img src="https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img" alt="..."/>
   <div class="card-img-overlay d-flex justify-content-center align-items-center">
@@ -36,7 +43,7 @@ const onSubmit = data => {
 </form> 
   </div>
 </div>
-            
+           <Footer></Footer> 
         </div>
     );
 };

@@ -31,26 +31,26 @@ const ManageProducts = () => {
       <div class="row row-cols-1 row-cols-md-4 g-4 m-1">
   
   {
-  products.map(product => <table class="table table-bordered border-primary w-75 mx-auto">
-      <thead>
-    <tr>
-      <th scope="col">Order Id</th>
-      <th scope="col">Ring</th>
-      <th scope="col">Price</th>
-      <th scope="col">Shipment</th>
-      <th scope="col">Control</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{product._id}</th>
-      <td>{product.name}</td>
-      <td>$ {product.price}</td>
-      <td>{product.status}</td> 
-      <td><button class="btn btn-danger text-white" onClick={()=> handleDelete(product._id)}>Delete</button></td> 
-    </tr>
-  </tbody>
-</table>)
+  products.map(product => <div className="w-100"><div className="table-responsive "><table class="table">
+  <thead>
+<tr>
+  <th scope="col">Order Id</th>
+  <th scope="col">Ring</th>
+  <th scope="col">Price</th>
+  <th scope="col">Shipment</th>
+  <th scope="col">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th scope="row">{product._id}</th>
+  <td>{product.name}</td>
+  <td>$ {product.price}</td>
+  <td>{product.status}</td> 
+  <td><button class="btn btn-danger text-white" onClick={()=> handleDelete(product._id)}>Delete</button></td> 
+</tr>
+</tbody>
+</table></div></div>)
   }
   
   </div>

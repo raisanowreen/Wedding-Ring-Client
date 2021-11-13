@@ -36,22 +36,23 @@ const Dashboard = (props) => {
   };
 
   const drawer = (
-    <div className="bg-dark h-100">
-      <h3 className="text-info mt-3">Welcome to Dashboard</h3> 
+    <div className="bg-dark">
+      <h3 className="text-info mt-2">Welcome to Dashboard</h3> 
       <Link to="/home"><Button class="btn btn-success m-4 text-white w-75">Home</Button></Link>     
-      { admin &&
+      { admin ?
         <Box>
           <Link to={`${url}/makeAdmin`}><Button class="btn btn-success m-4 text-white w-75">Make Admin</Button></Link>
       <Link to={`${url}/addAProduct`}><Button class="btn btn-success m-4 text-white w-75">Add A Product</Button></Link>
       <Link to={`${url}/manageProducts`}><Button class="btn btn-success m-4 text-white w-75">Manage Products</Button></Link>
+      <Link to={`${url}/manageOrders`}><Button class="btn btn-success m-4 text-white w-75">Manage Orders</Button></Link>
         </Box>
-      }
+      :
     <div className="bg-dark">
     <Link to={`${url}/pay`}><Button class="btn btn-success m-4 text-white w-75">Payment</Button></Link>
       <Link to={`${url}/addAReview`}><Button class="btn btn-success m-4 text-white w-75">Add A Review</Button></Link>
       <Link to={`${url}`}><Button class="btn btn-success m-4 text-white w-75">My Orders</Button></Link>
       <Link to={`${url}/logout`}><Button onClick={logOut} class="btn btn-success m-4 text-white w-75">Logout</Button></Link>
-    </div>
+    </div>}
     </div>
   );
 
@@ -106,11 +107,13 @@ const Dashboard = (props) => {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` },bgcolor: 'text.primary' }}
       >
         <Toolbar />
-        <h3 className="text-info mb-5">Check Your Orders</h3>
+       { ! admin ?<h3 className="text-info mb-5">Check Your Orders</h3>:
+<div>   <h3 className="text-info mb-5">Welcome Admin</h3>    <img class="p-5 m-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcH66hoPB3L0pSWh8irfQSoIUkGaNnLHs49w&usqp=CAU" alt="" />
+</div>       }
         <Switch>
-        <Route exact path={path}>
+       { !admin&& <Route exact path={path}>
 <DashboardHome></DashboardHome>        
-</Route>
+</Route>}
         <Route exact path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
         </Route>

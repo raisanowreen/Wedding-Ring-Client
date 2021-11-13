@@ -21,6 +21,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import Pay from './Pages/Dashboard/Pay/Pay';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
+import ManageOrders from './Pages/Dashboard/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
           </Route>
           <Route exact path="/dashboard/manageProducts">
             <ManageProducts />
+          </Route>
+          <Route exact path="/dashboard/manageOrders">
+            <ManageOrders />
           </Route>
           <Route exact path="/dashboard/makeAdmin">
             <MakeAdmin />

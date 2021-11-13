@@ -16,7 +16,7 @@ const MyOrders = () => {
     return (
         <div>
             <h4 className="bg-success p-3">{orders.length} orders has been placed</h4>
-            {orders.map(order =>  <table class="table table-dark table-striped">
+            {orders.map(order =>  <div className="table-responsive"><table class="table text-dark">
             <thead>
     <tr>
       <th scope="col">Order Id</th>
@@ -35,7 +35,7 @@ const MyOrders = () => {
       <td><button class="btn btn-outline-danger text-white">Delete</button></td> 
     </tr>
   </tbody>
-</table>)}
+</table></div>)}
 
 
            

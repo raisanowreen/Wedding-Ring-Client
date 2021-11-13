@@ -13,7 +13,7 @@ const onSubmit = data => {
 
     // Add items api to database
 
-    axios.post('http://localhost:5000/products', data)
+    axios.post('https://boiling-everglades-45743.herokuapp.com/products', data)
     .then(res =>{
         if(res.data.insertedId){
             alert('New Ring Added Successfully');

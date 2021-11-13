@@ -4,7 +4,7 @@ const ManageOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(()=>{
-        const url = 'http://localhost:5000/allOrders';
+        const url = 'https://boiling-everglades-45743.herokuapp.com/allOrders';
         fetch(url)
         .then(res => res.json())
         .then(data=> setAllOrders(data)
@@ -13,7 +13,7 @@ const ManageOrders = () => {
 
 
     const handleDelete = id =>{
-        const url= `http://localhost:5000/allOrders/${id}`
+        const url= `https://boiling-everglades-45743.herokuapp.com/allOrders/${id}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -27,6 +27,29 @@ const ManageOrders = () => {
             }
         })
     }
+
+
+    const [status, setStatus] = useState('')
+
+    const handleStatus = (e) =>{
+        setStatus(e.target.value)
+    }
+
+    const handleUpdate = (id) =>{
+fetch(`https://boiling-everglades-45743.herokuapp.com/allOrders/${id}`,{
+    method: 'PUT',
+    headers:{
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify({status})
+})
+.then(res=> res.json())
+.then(data =>{
+    alert('Product shipped')
+    console.log(data)
+})
+    
+    }
     return (
         <div>
         <h4 className="bg-success p-3">{allOrders.length} orders has been placed</h4>
@@ -38,6 +61,7 @@ const ManageOrders = () => {
   <th scope="col">Ring</th>
   <th scope="col">Price</th>
   <th scope="col">Shipment</th>
+  <th scope="col">Approve</th>
   <th scope="col">Control</th>
 </tr>
 </thead>
@@ -47,7 +71,8 @@ const ManageOrders = () => {
   <th scope="row">{allOrders.name}</th>
   <td>{allOrders.ring}</td>
   <td>$ {allOrders.price}</td>
-  <td>{allOrders.status}</td> 
+  <td><input onChange={handleStatus} type="text" defaultValue={allOrders.status} /></td> 
+  <td><button class="btn btn-outline-danger text-dark" onClick={()=> handleUpdate(allOrders._id)}>Update</button></td> 
   <td><button class="btn btn-outline-danger text-dark" onClick={()=> handleDelete(allOrders._id)}>Delete</button></td> 
 </tr>
 </tbody>

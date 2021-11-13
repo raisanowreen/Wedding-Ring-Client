@@ -6,12 +6,29 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://boiling-everglades-45743.herokuapp.com/orders?email=${user.email}`
         fetch(url)
         .then(res => res.json())
         .then(data=> setOrders(data)
         );
     },[user]); 
+
+
+    const handleDelete = id =>{
+      const url= `https://boiling-everglades-45743.herokuapp.com/allOrders/${id}`
+      fetch(url, {
+          method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data =>{
+          console.log(data);
+          if(data.deletedCount){
+              alert('Deleted');
+              const remaining = orders.filter(order => order._id !== id);
+              setOrders(remaining)
+          }
+      })
+  }
 
     return (
         <div>
@@ -32,7 +49,7 @@ const MyOrders = () => {
       <td>{order.ring}</td>
       <td>$ {order.price}</td>
       <td>{order.status}</td> 
-      <td><button class="btn btn-outline-danger text-white">Delete</button></td> 
+      <td><button class="btn btn-outline-danger text-white" onClick={()=> handleDelete(order._id)}>Delete</button></td> 
     </tr>
   </tbody>
 </table></div>)}

@@ -26,7 +26,7 @@ const handleOnBlur = e =>{
 
 // Single item url fetch
 useEffect( () =>{
-    fetch(`http://localhost:5000/products/${productId}`)
+    fetch(`https://boiling-everglades-45743.herokuapp.com/products/${productId}`)
     .then(res => res.json())
     .then(data => setProduct(data))
 }, [productId]);
@@ -37,7 +37,7 @@ const { register, handleSubmit, reset } = useForm();
 const onSubmit = data => {
     console.log(data)
 
-    axios.post('http://localhost:5000/orders', data)
+    axios.post('https://boiling-everglades-45743.herokuapp.com/orders', data)
     .then(res =>{
         if(res.data.insertedId){
             alert('Order Placed Successfully');

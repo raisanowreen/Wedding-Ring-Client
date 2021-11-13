@@ -82,7 +82,7 @@ const loginUser = (email, password, location, history) =>{
 
 
 useEffect(() =>{
-  fetch(`http://localhost:5000/users/${user.email}`)
+  fetch(`https://boiling-everglades-45743.herokuapp.com/users/${user.email}`)
   .then(res=>res.json())
   .then(data => setAdmin(data.admin))
 },[user.email])
@@ -102,7 +102,7 @@ const logOut = () =>{
 const saveUser = (email, displayName, password) =>{
   const user = {email, displayName, password};
   console.log(user);
-fetch('http://localhost:5000/users',{
+fetch('https://boiling-everglades-45743.herokuapp.com/users',{
   method: 'POST',
   headers: {
     'content-type': 'application/json'
